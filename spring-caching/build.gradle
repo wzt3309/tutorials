@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.2.2.RELEASE'
+    id 'io.spring.dependency-management' version "1.0.9.RELEASE"
+    id "io.freefair.lombok" version "5.1.0"
+}
+
+group = 'io.zeddw'
+version = '1.0.0-SNAPSHOT'
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-cache'
+    implementation 'org.apache.commons:commons-lang3:3.11'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'org.junit.vintage'
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
