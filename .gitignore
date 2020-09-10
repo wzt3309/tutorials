@@ -1,7 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### Gradle template
-spring-caching/.gradle
-/build/
+**/build/
+**/.gradle
 
 # Ignore Gradle GUI config
 gradle-app.setting
