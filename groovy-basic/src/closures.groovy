@@ -109,4 +109,4 @@ def select(action) {
 }
 def fun1 = {a -> a + 2}
 def fun2 = {a -> a * 3}
-assert select(fun1).on(fun2).then(1) == (select fun1 on fun2 then 1) // 5
+//assert select(fun1).on(fun2).then(1) == (select fun1 on fun2 then 1) // 5
