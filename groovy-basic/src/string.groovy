@@ -24,6 +24,9 @@ println('test\b')
 // \u+4位16进制数 unicode字符
 println('Euro currency: \u20ac')
 
+// ""中如果无插值 则不是GString
+println("abc" instanceof GString) // false
+
 // aMap.1 输出 [1:1234].1
 // aMap.x 变成获取 aMap的属性x
 def aMap = [:]
