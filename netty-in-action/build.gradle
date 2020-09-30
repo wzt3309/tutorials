@@ -1,0 +1,15 @@
+plugins {
+    id 'java'
+}
+
+group 'io.zeddw'
+version '0.0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'io.netty', name: 'netty-handler', version: '4.1.52.Final'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
