@@ -22,6 +22,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Data
 public class TenantUser implements UserDetails, Entity<UserId> {
     private final UserId id;
+    private String title;
     private String username;
     private String password;
     private Set<GrantedAuthority> authorities;
@@ -41,6 +42,7 @@ public class TenantUser implements UserDetails, Entity<UserId> {
     public static final class Builder {
         private final Set<GrantedAuthority> authorities = new HashSet<>();
         private UserId id;
+        private String title;
         private String username;
         private String password;
         private boolean accountNonExpired = true;
@@ -80,6 +82,11 @@ public class TenantUser implements UserDetails, Entity<UserId> {
 
         public Builder id(String tenant, String email) {
             this.id = new UserId(new Tenant(tenant), email);
+            return this;
+        }
+
+        public Builder title(String title) {
+            this.title = title;
             return this;
         }
 
@@ -135,6 +142,7 @@ public class TenantUser implements UserDetails, Entity<UserId> {
 
         public TenantUser build() {
             TenantUser tenantUser = new TenantUser(id);
+            tenantUser.setTitle(title);
             tenantUser.setUsername(username);
             tenantUser.setPassword(password);
             tenantUser.setAuthorities(authorities);
