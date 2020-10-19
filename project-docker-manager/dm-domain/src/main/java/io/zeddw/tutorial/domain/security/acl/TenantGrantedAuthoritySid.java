@@ -31,4 +31,14 @@ public class TenantGrantedAuthoritySid extends GrantedAuthoritySid implements Te
         super(grantedAuthority);
         this.tenant = Tenants.getTenant(grantedAuthority);
     }
+
+    public static TenantGrantedAuthoritySid from(GrantedAuthoritySid sid) {
+        if (sid == null) {
+            return null;
+        }
+        if (sid instanceof TenantGrantedAuthoritySid) {
+           return (TenantGrantedAuthoritySid) sid;
+        }
+        return new TenantGrantedAuthoritySid(sid.getGrantedAuthority(), Tenants.getTenant(sid));
+    }
 }

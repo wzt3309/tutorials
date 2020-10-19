@@ -38,6 +38,15 @@ public enum Action implements Permission {
         return AclFormattingUtils.printBinary(mask, c);
     }
 
+    public static Action of(char c) {
+        for (Action action : values()) {
+            if (action.c == c) {
+                return action;
+            }
+        }
+        throw new IllegalArgumentException("Unknown enum constant Action." + c);
+    }
+
     public static Action ofNullable(char c) {
         for (Action action : values()) {
             if (action.c == c) {

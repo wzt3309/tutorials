@@ -50,6 +50,9 @@ public class TenantPrincipalSid extends PrincipalSid implements TenantSid, Ident
         if (sid == null) {
             return null;
         }
+        if (sid instanceof TenantPrincipalSid) {
+            return (TenantPrincipalSid)sid;
+        }
         return new TenantPrincipalSid(sid.getPrincipal(), Tenants.getTenant(sid));
     }
 }
