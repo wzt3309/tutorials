@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
  * @author xingguan.wzt
  * @date 2020/10/10
  */
-public interface TenantUserService extends UserDetailsService {
+public interface TenantUserDetailsService extends UserDetailsService {
 
     /**
      * 根据用户名加载用户信息

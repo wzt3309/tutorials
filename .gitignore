@@ -116,3 +116,7 @@ lombok.config
 
 # gitbook
 **/_book
+
+# Python
+.venv/
+**/.venv/
