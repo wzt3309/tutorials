@@ -122,3 +122,8 @@ lombok.config
 # Python
 .venv/
 **/.venv/
+
+# Node
+**/node_modules/
+**/package-lock.json
+/es6-basic/.babelrc
